@@ -1,0 +1,28 @@
+{
+  "name": "value-coins",
+  "version": "0.0.1",
+  "description": "Simple command cli for get value of coins in poloniex",
+  "bin": {
+    "value-coins": "./src/cli.js"
+  },
+  "main": "cli.js",
+  "scripts": {
+    "test": "no test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pedro-Souza/value-coins.git"
+  },
+  "author": "Pedro Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pedro-Souza/value-coins/issues"
+  },
+  "homepage": "https://github.com/Pedro-Souza/value-coins#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
