@@ -5,8 +5,9 @@
   "bin": {
     "value-coins": "./dist/cli.js"
   },
-  "main": "cli.js",
+  "main": "dist/cli.js",
   "scripts": {
+    "build": "babel ./src -d ./dist,
     "test": "no test"
   },
   "repository": {
