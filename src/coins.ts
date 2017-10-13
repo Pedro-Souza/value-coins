@@ -1,19 +1,18 @@
 import axios from 'axios';
+import { green } from "colors/safe";
 
 export class getPolo{
+    url: string = "https://poloniex.com/public?command=returnTicker";
+    result: string;
     constructor(){
-        axios.get("https://google.com").then((res) => {
-            this.getJson(res);
-        }).catch(err => {
-            console.log("Deu um error aqui.");
-            console.log(err);
-        });
     }
-    getJson(value): void {
-        //return JSON.parse(this.result);
-        console.log(value.status);
-        
+    getCoin(value) {
+        axios.get(this.url).then(res => {
+            console.log(green("Valor => " + res.data[`BTC_${value}`]['last']));
+            console.log(green("Menor valor => " + res.data[`BTC_${value}`]['low24hr']));
+            console.log(green("Volume => "+res.data[`BTC_${value}`]['baseVolume']));
+        }).catch(err => {
+            console.log(err);
+        })
     }
 }
-
-const teste = new getPolo();
