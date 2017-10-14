@@ -3,7 +3,6 @@ import { green } from "colors/safe";
 
 export class getPolo{
     url: string = "https://poloniex.com/public?command=returnTicker";
-    result: string;
     constructor(){
     }
     getCoin(value) {
