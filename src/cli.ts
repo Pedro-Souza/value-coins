@@ -9,23 +9,25 @@ export const emitError = message => console.log(red(`${message} Error`));
 
 export class cli{
     constructor() {
-        console.log("Me construiu");
         this.cli(
             yargs.usage('Uso $0 --coin <coin>')
                  .option('coin', {
                      describe: 'Informe a criptomoeda desejada!',
                      type: 'string'
-                  }).option('teste', {
-                      describe: 'Mais um teste',
-                      type: 'string'
                   })
-                  .demandOption(['coin']).locale('pt_BR').strict().help().version().argv
+                  .demandOption(['coin'])
+                  .locale('pt_BR')
+                  .strict()
+                  .help()
+                  .version()
+                  .argv
                 )
     }
     cli(args) {
         if(args.coin) {
-            console.log("aqui => " + args.coin);
+            //console.log("aqui => " + args.coin);
             const tt = new getPolo();
+            tt.getCoin("XVC")
         }
     }
 }
