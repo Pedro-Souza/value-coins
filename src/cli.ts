@@ -27,7 +27,7 @@ export class cli{
         if(args.coin) {
             //console.log("aqui => " + args.coin);
             const tt = new getPolo();
-            tt.getCoin("XVC")
+            tt.getCoin("ETH")
         }
     }
 }
