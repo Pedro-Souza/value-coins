@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+
 import * as yargs from "yargs";
 import { green, red } from "colors/safe";
 import { getPolo } from './coins';
 
-export const emitSuccess = message => console.log(green(`${message} ✔ Passou`));
-export const emitError = message => console.log(red(`${message} Error`));
+//export const emitSuccess = message => console.log(green(`${message} ✔ Passou`));
+//export const emitError = message => console.log(red(`${message} Error`));
 
 
 export class cli{
@@ -25,10 +26,9 @@ export class cli{
     }
     cli(args) {
         if(args.coin) {
-            //console.log("aqui => " + args.coin);
-            const tt = new getPolo();
-            tt.getCoin("ETH")
+            const coin = new getPolo();
+            coin.getCoin(args.coin.toUpperCase());
         }
     }
 }
-const lul = new cli();
+const clii = new cli();
