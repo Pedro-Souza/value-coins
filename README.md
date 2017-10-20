@@ -4,4 +4,16 @@ This is a simple project maded in typescript for consume the Poloniex API,
 through this project you can get the value of cryptocoins.
 
 Start your project using this command:
-* npm install -g value-coins
+```
+npm install -g value-coins
+```
+
+Command to use:
+```
+$ value-coins --coin { initials here }
+```
+
+Example:
+```
+$ value-coins --coin ETH
+```
