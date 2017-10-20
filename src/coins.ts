@@ -9,7 +9,8 @@ export class getPolo{
         axios.get(this.url).then(res => {
             console.log(green("Valor => " + res.data[`BTC_${value}`]['last']));
             console.log(green("Menor valor => " + res.data[`BTC_${value}`]['low24hr']));
-            console.log(green("Volume => "+res.data[`BTC_${value}`]['baseVolume']));
+            console.log(green("Volume => " + res.data[`BTC_${value}`]['baseVolume']));
+            console.log(green("low24hr => " + res.data[`BTC_${value}`]['low24hr']));
         }).catch(err => {
             console.log(err);
         })
