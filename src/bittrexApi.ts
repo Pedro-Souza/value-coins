@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { green } from "colors/safe";
+import { green, red } from "colors/safe";
 
 export class BittrexApi{
     
@@ -12,6 +12,7 @@ export class BittrexApi{
                 throw new Error('Error on consulting Bittrex api url (' + url + ').\n' + response.data.message);
             
             var result = response.data.result[0];
+            console.log(red("[!] Bittrex  [+]"))
             console.log(green("Valor => " + result.Last));
             console.log(green("Menor valor => " + result.Low));
             console.log(green("Volume => " + result.Volume));

@@ -5,10 +5,6 @@ import { green, red } from "colors/safe";
 import { getPolo } from './coins';
 import { BittrexApi } from './bittrexApi';
 
-//export const emitSuccess = message => console.log(green(`${message} ✔ Passou`));
-//export const emitError = message => console.log(red(`${message} Error`));
-
-
 export class cli{
     constructor() {
         this.cli(
@@ -21,9 +17,12 @@ export class cli{
                      'exchange': {
                          describe: 'Informe a exchange desejada! (poloniex ou bittrex)',
                          type: 'string'
+                     },
+                     'all': {
+                         describe: 'For all exchanges.'
                      }
                  })
-                  .demandOption(['coin','exchange'])
+                  .demandOption(['coin'])
                   .locale('pt_BR')
                   .strict()
                   .help()
@@ -33,7 +32,7 @@ export class cli{
     }
     cli(args) {
         if(args.coin && args.exchange) {
-            //Getting ticker from polo
+            //Getting tickerlink  from polo
             if(args.exchange.toLowerCase() === 'polo' || args.exchange.toLowerCase() === 'poloniex'){
                 const coinPolo = new getPolo();
                 coinPolo.getCoin(args.coin.toUpperCase());
@@ -42,10 +41,17 @@ export class cli{
             else if(args.exchange.toLowerCase() === 'bittrex'){
                 let bittrexApi = new BittrexApi();
                 bittrexApi.getTicker(args.coin);
+            } else if (args.all){
+                console.log("Chamou o all")
             }
             else{
                 console.log(red('Exchange not supported yet.'));
             }
+        } else if(args.coin && args.all){
+            let bittrex = new BittrexApi();
+            bittrex.getTicker(args.coin);
+            let polo = new getPolo();
+            polo.getCoin(args.coin.toUpperCase());
         }
     }
 }

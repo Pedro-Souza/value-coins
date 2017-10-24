@@ -1,6 +1,6 @@
 {
   "name": "value-coins",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Simple command cli for get value of coins in poloniex",
   "bin": {
     "value-coins": "./dist/cli.js"
