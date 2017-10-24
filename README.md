@@ -1,6 +1,6 @@
 ### Value Coins
 
-This is a simple project maded in typescript for consume the Poloniex API,
+This is a simple project maded in typescript for consume the Poloniex API and Bittrex,
 through this project you can get the value of cryptocoins.
 
 Start your project using this command:
@@ -18,4 +18,8 @@ NOTE: posible exchanges are [Poloniex](https://poloniex.com/exchange) and [Bittr
 Example:
 ```
 $ value-coins --coin ETH --exchange poloniex
+```
+Or
+```
+$ value-coins --coin eth --all 
 ```
