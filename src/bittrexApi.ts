@@ -17,7 +17,7 @@ export class BittrexApi{
             console.log(green(`Menor valor => ${result.Low}`));
             console.log(green(`Volume => ${result.Volume}`));
         }).catch(err => {
-            console.log(err);
+            console.log(`Verifique a sua conexão com a internet`);
         });
     }
 

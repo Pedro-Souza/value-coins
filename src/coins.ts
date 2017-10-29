@@ -7,8 +7,8 @@ export class getPolo{
     }
     getCoin(value) {
         axios.get(this.url).then(res => {
-            if(res.data.success != true){
-                throw new Error(`Error on consulting Bittrex api url (${this.url}). \n ${res.data.message}`);
+            if(res.status != 200){
+               throw new Error(`Error on consulting Poloniex api url (${this.url}). \n ${res.data.message}`);
             }
             console.log(red("[!] Poloniex [+]"));
             console.log(green(`Valor => ${res.data[`BTC_${value}`]['last']}`));
@@ -16,7 +16,7 @@ export class getPolo{
             console.log(green(`Volume => ${res.data[`BTC_${value}`]['baseVolume']}`));
             console.log(green(`low24hr => ${res.data[`BTC_${value}`]['low24hr']}`));
         }).catch(err => {
-            console.log(err);
+            console.log(`Verifique a conexão com a internet`);
         })
     }
 }
