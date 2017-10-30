@@ -23,3 +23,6 @@ Or
 ```
 $ value-coins --coin eth --all 
 ```
+
+### Demo:
+![demo](demo.png)
