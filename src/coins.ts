@@ -20,7 +20,7 @@ export class getPolo{
                 throw new Error(`Informe uma moeda válida`);
             }
         }).catch(err => {
-            console.log(`${err}`);
+            console.log(green(`${err}`));
         })
     }
 }
