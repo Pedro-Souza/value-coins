@@ -5,7 +5,7 @@ export class BittrexApi{
     
     baseUrl: string = "https://bittrex.com/api/v1.1/";
 
-    getTicker(coin){
+    getTicker(coin): void{
         let url: string = `${this.baseUrl}public/getmarketsummary?market=btc-${coin.toUpperCase()}`;
         axios.get(url).then(response => {
             console.log(red("[!] Bittrex  [+]"))
