@@ -5,7 +5,7 @@ export class getPolo{
     url: string = "https://poloniex.com/public?command=returnTicker";
     constructor(){
     }
-    getCoin(value) {
+    getCoin(value): void {
         axios.get(this.url).then(res => {
             if(res.status != 200){
                throw new Error(`Error on consulting Poloniex api url (${this.url}). \n ${res.data.message}`);
@@ -21,6 +21,6 @@ export class getPolo{
             }
         }).catch(err => {
             console.log(green(`${err}`));
-        })
+        });
     }
 }

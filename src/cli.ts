@@ -30,7 +30,7 @@ export class cli{
                   .argv
                 )
     }
-    cli(args) {
+    cli(args): void {
         if(args.coin && args.exchange) {
             //Getting tickerlink  from polo
             if(args.exchange.toLowerCase() === 'polo' || args.exchange.toLowerCase() === 'poloniex'){
