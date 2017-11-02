@@ -41,8 +41,6 @@ export class cli{
             else if(args.exchange.toLowerCase() === 'bittrex'){
                 let bittrexApi = new BittrexApi();
                 bittrexApi.getTicker(args.coin);
-            } else if (args.all){
-                console.log("Chamou o all")
             }
             else{
                 console.log(red('Exchange not supported yet.'));
