@@ -1,13 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 import { green, red } from "colors/safe";
 
-export class getPolo{
-    url: string = "https://poloniex.com/public?command=returnTicker";
-    constructor(){
-    }
-    getCoin(value): void {
-        axios.get(this.url).then(res => {
-            if(res.status != 200){
+export class GetPolo {
+    public url: string = "https://poloniex.com/public?command=returnTicker";
+
+    public getCoin(value): void {
+        axios.get(this.url).then((res) => {
+            if (res.status !== 200) {
                throw new Error(`Error on consulting Poloniex api url (${this.url}). \n ${res.data.message}`);
             }
             console.log(red("[!] Poloniex [+]"));
@@ -19,7 +18,7 @@ export class getPolo{
             } catch (error) {
                 throw new Error(`Informe uma moeda válida`);
             }
-        }).catch(err => {
+        }).catch((err) => {
             console.log(green(`${err}`));
         });
     }
