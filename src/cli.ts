@@ -14,14 +14,14 @@ export class Cli {
             yargs.usage("Uso $0 --coin <coin> --exchange <exchange>")
                  .options({
                     "coin": {
-                        describe: "nforme a criptomoeda desejada!",
+                        describe: "informe a criptomoeda desejada!",
                         type: "string",
                     },
-                    'exchange': {
+                    "exchange": {
                         describe: "Informe a exchange desejada! (poloniex ou bittrex)",
                         type: "string",
                     },
-                    'all': {
+                    "all": {
                         describe: "For all exchanges.",
                     },
                  })

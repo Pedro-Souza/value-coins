@@ -4,7 +4,7 @@ import { green, red } from "colors/safe";
 export class BittrexApi {
     public baseUrl: string = "https://bittrex.com/api/v1.1/";
 
-    public getTicker(coin): void {
+    public getTicker(coin: string): void {
         const url: string = `${this.baseUrl}public/getmarketsummary?market=btc-${coin.toUpperCase()}`;
         axios.get(url).then((response) => {
             console.log(red("[!] Bittrex  [+]"));
